@@ -1,0 +1,38 @@
+-var titulo = "Sorting hat";
+-var titulos = ["Titulo 1","Titulo 2","Titulo 3"];
+-var usuario = "Juan";
+mixin caja(imagen,titulo,contenido)
+    .caja 
+        .caja__imagen: img(src="images/"+imagen)
+        .caja__contenido 
+            h3=titulo
+            p=contenido
+            a.boton Leer más
+doctype html 
+html 
+    head 
+        meta(charset="UTF-8")
+        link(rel="stylesheet",href="css/ejercicio-pug.css")
+    body 
+        header 
+            h1 PotterKey Games 
+            if usuario 
+                a.boton Hola #{usuario}
+            else
+                a.boton Registro
+        section.intro 
+            .intro__imagen: img(src="images/imagen.png")
+            .intro__contenido 
+                h2 #{titulo}
+                p
+                    | The Sorting Hat is one of the cleverest enchanted 
+                    | objects most witches and wizards will ever meet. 
+                    | It literally contains the intelligence of the four founders, 
+                    | can speak (through a rip near its brim) and is skilled at 
+                    | Legilimency, which enables it to look into the wearer’s 
+                    | head and divine his or her capabilities or mood.
+                    span The famous Hogwarts Sorting Hat gives an account of its own genesis in a series of songs sung at the beginning of each school year.
+                a.boton Leer más
+        main.contenido 
+            each titulo in titulos 
+                +caja("imagen.png",titulo,'The Sorting Hat is one of the cleverest enchanted')
