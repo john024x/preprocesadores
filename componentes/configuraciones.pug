@@ -1,0 +1,10 @@
+-var titulo = "Sorting hat";
+-var titulos = ["Titulo 1","Titulo 2","Titulo 3"];
+-var usuario = "Juan";
+-var enlaces = ['Acerca','Noticias', 'Contacto'];
+mixin caja(imagen,titulo,contenido)
+    .caja 
+        .caja__imagen: img(src="images/"+imagen)
+        .caja__contenido 
+            h3=titulo
+            p=contenido
